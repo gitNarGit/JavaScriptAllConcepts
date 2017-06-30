@@ -1,0 +1,45 @@
+<script src="worker.js"></script>
+Find the sum of all the multiples of 3 or 5 below 1000000000.<br>
+<input type="number" value="1000000000" id="number"><br>
+<button onclick="worker()">Worker</button>
+<button onclick="simple()">Simple</button><br>
+<button onclick="otherStuff1()">other stuff1</button>
+<button onclick="otherStuff2()">other stuff2</button>
+<div id="demo1"></div>
+<script>
+let myWorker;
+function worker(){ // worker is working in a background and we can continue doing other works in browser
+  if(typeof(w) !== "undefined") {
+    myWorker.terminate(); // we can terminate the worker
+    myWorker = undefined; // to be able to use it again
+  }
+  myWorker = new Worker('worker.js');
+  myWorker.postMessage(document.getElementById("number").value);
+  myWorker.onmessage = function(event){
+    document.getElementById("demo1").innerHTML = "Worker:" + event.data;
+  };
+}
+
+
+function simple(){ // this function will block browser untill it's finished
+  let sum = 0;
+  let value = document.getElementById("number").value;
+  for(let i=0;i<=value;i++){
+    if(i%3===0 && i%5===0){
+      sum+=i;
+    }
+  }
+  document.getElementById("demo1").innerHTML = "Simple: "+sum;
+}
+
+
+function otherStuff1(){
+  alert(123);
+}
+
+function otherStuff2(){
+  document.getElementById("demo1").style.backgroundColor = "green";
+  document.getElementById("demo1").style.height = "100px";
+}
+
+</script>

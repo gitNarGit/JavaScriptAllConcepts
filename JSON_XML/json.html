@@ -1,0 +1,36 @@
+<script>
+//JS Object Notation
+//JSON is a lightweight data-interchange format.
+//JSON is a text. It just uses javascript object style
+//Because of this, it's easy to transfer JS object to JSON and back
+
+//Syntax
+//names in JSON must be in quotes
+/*
+{
+  "name" : "John",
+  "surname" : "Smith",
+  "f" : "function(){}"
+};
+JSON.parse()
+*/
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      console.log(this.responseText.name);//undefined, because JSON is a string
+      console.log(JSON.stringify(this.responseText).name); // also undefined, it was a string already
+      console.log(JSON.parse(this.responseText).name);//now it's a JS object
+
+    }
+  };
+  xhttp.open("GET", "json.txt", true);
+  xhttp.send();
+//if we want to send JS data to server, we must use stringify, if we want to use data from server we must use parse
+
+//JSON is quicker than XML in reading and writing and it can use arrays
+//JSON is a JS part, so it's ready to be used in JS, and so it's much easier to work with JSON is JS
+//JSON values can't contain functions, date type and undefined,
+//but they can be written as strings and converted later. We must avoid from functions in JSON
+//JSON can be also just an array.It will be parsed to JS array. It's values shoud be as string
+</script>

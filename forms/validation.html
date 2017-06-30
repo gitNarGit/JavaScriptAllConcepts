@@ -1,0 +1,22 @@
+<div id="message"></div>
+<form action="" method="POST" id="form1" novalidate="">
+  <input type="number" min="10" required placeholder="number" value="10" name="num"><br>
+  <input type="email" required placeholder="email" value="test@test.com" name="email"><br>
+  <textarea required=""></textarea><br>
+  <input type="submit" required name="submit" value="send">
+</form>
+<script>
+  (function(){
+    document.getElementById("form1").addEventListener("submit",function(e){
+      e.preventDefault();
+      let form = this.querySelectorAll("input,textarea");
+      let message = document.getElementById("message");
+      message.innerHTML = "";
+      for(let input of form){
+        if(input.checkValidity() === false){
+          message.innerHTML += input.validationMessage+"<br>";
+        }
+      }
+    })
+  })()
+</script>

@@ -1,0 +1,39 @@
+<script>
+// arrow function does not bind its own this and they have a shorter syntax
+//usual function
+function f1(x,y){
+  return x+y;
+}
+//arrow function
+let f2 = (x,y) => {return x+y;}
+//if only one expression is returned, we can skip curly braces
+let f3 = (x,y) => x*y;
+//if only one param is required parentheses can also be skipped
+let f4 = x => x*x;
+//but if no parameters required, then we need parentheses
+let f5 = () => 456;
+// we can return an object, but it must be wrapped with parentheses
+let f6 = () => ({x:1,y:2})
+</script>
+
+<div id='af'>click me</div>
+<div id='af2'>click me</div>
+<script>
+//this
+// in regular functions this is attached to it's execution context. It is changing it's value depending on how it was called
+
+//first example is inheriting this from it's parent
+document.getElementById('af').addEventListener('click', function() {
+    let x = 123;
+    setTimeout(() => {
+       console.log(this);
+    }, 500);
+});
+//second example gets this of it's caller because setTimeout is the same as window.setTimeout
+document.getElementById('af2').addEventListener('click', function() {
+    let x = 123;
+    setTimeout(function(){
+       console.log(this);
+    }, 500);
+});
+</script>
