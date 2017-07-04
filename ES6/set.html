@@ -14,4 +14,12 @@ console.log(set);
 
 //WeakSets are the same as WeakMaps for Maps. They also don't block garbage from being collected
 //also in WeakSets we can store only objects
+
+
+// Sets
+var s = new Set();
+s.add("hello").add("goodbye").add("hello");
+s.size === 2;
+s.has("hello") === true;
+
 </script>

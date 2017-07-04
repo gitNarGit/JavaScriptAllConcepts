@@ -1,5 +1,8 @@
 //The import statement is used to import functions, objects or primitives that have been exported from an external module, another script, etc.
 //Always use modules (import/export) over a non-standard module system. You can always transpile to your preferred module system.
+//Codifies patterns from popular JavaScript module loaders (AMD, CommonJS).
+//Runtime behaviour defined by a host-defined default loader. 
+//Implicitly async model – no code executes until requested modules are available and processed.
 
 import * as myModule from 'my-module';
 
