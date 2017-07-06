@@ -1,0 +1,20 @@
+<div id='af'>click me</div>
+<div id='af2'>click me</div>
+
+//this
+// in regular functions this is attached to it's execution context. It is changing it's value depending on how it was called
+
+//first example is inheriting this from it's parent
+document.getElementById('af').addEventListener('click', function() {
+    let x = 123;
+    setTimeout(() => {
+       console.log(this);
+    }, 500);
+});
+//second example gets this of it's caller because setTimeout is the same as window.setTimeout
+document.getElementById('af2').addEventListener('click', function() {
+    let x = 123;
+    setTimeout(function(){
+       console.log(this);
+    }, 500);
+});
