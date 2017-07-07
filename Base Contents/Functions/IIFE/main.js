@@ -1,3 +1,11 @@
+//Why? An immediately invoked function expression is a single unit - wrapping both it, and its invocation parens, in parens, cleanly expresses this. 
+//Note that in a world with modules everywhere, you almost never need an IIFE.
+// immediately-invoked function expression (IIFE)
+(function () {
+  console.log('Welcome to the Internet. Please follow me.');
+}());
+
+
 // iife is running immediately and is creating a closure
 (function(){
   let x = 123;

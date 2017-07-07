@@ -1,10 +1,13 @@
+<body>
 <div id='af'>click me</div>
 <div id='af2'>click me</div>
 
-//this
-// in regular functions this is attached to it's execution context. It is changing it's value depending on how it was called
+<!--this
+in regular functions this is attached to it's execution context. It is changing it's value depending on how it was called
 
-//first example is inheriting this from it's parent
+first example is inheriting this from it's parent-->
+</body>
+<script>
 document.getElementById('af').addEventListener('click', function() {
     let x = 123;
     setTimeout(() => {
@@ -18,3 +21,4 @@ document.getElementById('af2').addEventListener('click', function() {
        console.log(this);
     }, 500);
 });
+<script>
