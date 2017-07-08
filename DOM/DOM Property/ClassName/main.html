@@ -1,0 +1,38 @@
+<!--HTML DOM className Property-->
+
+<!--Syntax
+HTMLElementObject.className-->
+
+<!--Example-->
+<!--Set the class for a <div> element with id="myDIV":-->
+
+<html>
+<head>
+<style>
+.mystyle {
+    width: 300px;
+    height: 100px;
+    background-color: coral;
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+    
+<div id="myDIV">
+I am a DIV element
+</div>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+    document.getElementById("myDIV").className = "mystyle";
+}
+</script>
+
+</body>
+</html>

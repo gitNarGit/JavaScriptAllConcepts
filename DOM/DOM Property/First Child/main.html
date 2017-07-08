@@ -1,0 +1,31 @@
+<!--DOM firstChild Property-->
+
+<!--Syntax
+node.firstChild-->
+
+<!--The firstChild property returns the first child node of the specified node, as a Node object.-->
+
+<html>
+<body>
+
+<p>Example list:</p>
+<ul id="myList"><li>Coffee</li><li>Tea</li></ul>
+
+<!--Click the button to get the HTML content of the list's first child node.-->
+
+<button onclick="myFunction()">Try it</button>
+
+<!--Whitespace inside elements is considered as text, and text is considered as nodes.-->
+<!--If you add whitespace before the first LI element, the result will be "undefined".-->
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var list = document.getElementById("myList").firstChild.innerHTML;
+    document.getElementById("demo").innerHTML = list;
+}
+</script>
+
+</body>
+</html>

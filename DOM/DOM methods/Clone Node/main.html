@@ -1,0 +1,28 @@
+<!--DOM cloneNode() Method-->
+
+<!--Syntax
+node.cloneNode(deep)-->
+
+<!--The cloneNode() method creates a copy of a node, and returns the clone.-->
+<!--Use the appendChild() or insertBefore() method to insert the cloned node to the document.-->
+<!--Set the deep parameter value to true if you want to clone all descendants (children), otherwise false.-->
+<html>
+<body>
+
+<ul id="myList1"><li>Coffee</li><li>Tea</li></ul>
+<ul id="myList2"><li>Water</li><li>Milk</li></ul>
+
+<button onclick="myFunction()">Try it</button>
+
+<!--Try changing the deep parameter to false, and only an empty LI element will be cloned.-->
+
+<script>
+function myFunction() {
+    var itm = document.getElementById("myList2").lastChild;
+    var cln = itm.cloneNode(true);
+    document.getElementById("myList1").appendChild(cln);
+}
+</script>
+
+</body>
+</html>

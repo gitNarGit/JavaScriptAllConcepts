@@ -1,0 +1,23 @@
+<!--Syntax-->
+<!--node.attributes-->
+
+<!--Example-->
+<!--Find out how many attributes a <button> element have:-->
+
+<html>
+<body>
+
+<p>Click the button to see how many attributes the button element have.</p>
+
+<button id="myBtn" onclick="myFunction()">Try it</button>
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myBtn").attributes.length;
+    document.getElementById("demo").innerHTML = x;
+}
+</script>
+
+</body>
+</html>

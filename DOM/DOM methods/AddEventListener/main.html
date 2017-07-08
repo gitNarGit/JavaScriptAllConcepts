@@ -1,0 +1,27 @@
+<!--The addEventListener Method-->
+<!--Syntax-->
+<!--document.addEventListener(event, function, useCapture)-->
+
+<!--When the user clicks anywhere in the document, output "Hello World" in a <p> element with id="demo":-->
+
+<html>
+<body>
+
+<p>This example uses the addEventListener() method to attach a click event to the document.</p>
+
+<p>Click anywhere in the document.</p>
+
+<p><strong>Note:</strong> The addEventListener() method is not supported in Internet Explorer 8 and earlier versions.</p>
+
+<p id="demo"></p>
+
+<script>
+document.addEventListener("click", function(){
+    document.getElementById("demo").innerHTML = "Hello World!";
+});
+</script>
+
+</body>
+</html>
+
+<!--Use the document.removeEventListener() method to remove an event handler that has been attached with the addEventListener() method.-->

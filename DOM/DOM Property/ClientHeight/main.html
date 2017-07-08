@@ -1,0 +1,45 @@
+<!--DOM clientHeight Property-->
+
+<!--Syntax
+element.clientHeight-->
+
+<!--The clientHeight property returns the viewable height of an element in pixels, including padding, but not the border, scrollbar or margin.-->
+
+<html>
+<head>
+<style>
+#myDIV {
+    height: 250px;
+    width: 400px;
+    padding: 10px;
+    margin: 15px;
+    border: 5px solid red;
+    background-color: lightblue;
+}
+</style>
+</head>
+<body>
+
+<button onclick="myFunction()">Try it</button>
+
+<div id="myDIV">
+  <b>Information about this div:</b><br>
+  Height: 250px<br>
+  Width: 400px<br>
+  padding: 10px<br>
+  margin: 15px<br>
+  border: 5px<br>
+  <p id="demo"></p>
+</div>
+
+<script>
+function myFunction() {
+    var elmnt = document.getElementById("myDIV");
+    var txt = "Height including padding: " + elmnt.clientHeight + "px<br>";
+    txt += "Width including padding: " + elmnt.clientWidth + "px";
+    document.getElementById("demo").innerHTML = txt;
+}
+</script>
+
+</body>
+</html>
