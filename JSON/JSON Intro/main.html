@@ -1,0 +1,51 @@
+<!--JSON: JavaScript Object Notation.-->
+<!--JSON is text, and we can convert any JavaScript object into JSON, and send JSON to the server.-->
+
+
+<!--Sending Data
+If you have data stored in a JavaScript object, you can convert the object into JSON, and send it to a server:-->
+
+<html>
+<body>
+
+<h2>Convert a JavaScript object into a JSON string, and send it to the server.</h2>
+
+<script>
+
+var myObj = { "name":"John", "age":31, "city":"New York" };
+var myJSON = JSON.stringify(myObj);
+window.location = "demo_json.php?x=" + myJSON;
+
+</script>
+
+</body>
+</html>
+
+<!--if we want to send JS data to server, we must use stringify, if we want to use data from server we must use parse-->
+<!--JSON is quicker than XML in reading and writing and it can use arrays
+JSON is a JS part, so it's ready to be used in JS, and so it's much easier to work with JSON is JS
+JSON values can't contain functions, date type and undefined,
+but they can be written as strings and converted later. We must avoid from functions in JSON
+JSON can be also just an array.It will be parsed to JS array. It's values shoud be as string-->
+
+
+<!--Receiving Data
+If you receive data in JSON format, you can convert it into a JavaScript object:-->
+
+<html>
+<body>
+
+<h2>Convert a string written in JSON format, into a JavaScript object.</h2>
+
+<p id="demo"></p>
+
+<script>
+
+var myJSON = '{ "name":"John", "age":31, "city":"New York" }';
+var myObj = JSON.parse(myJSON);
+document.getElementById("demo").innerHTML = myObj.name;
+
+</script>
+
+</body>
+</html>
