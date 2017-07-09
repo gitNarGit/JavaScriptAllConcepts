@@ -1,0 +1,18 @@
+<!--To send a request to a server, we use the open() and send() methods of the XMLHttpRequest object:-->
+
+<!--xhttp.open("GET", "ajax_info.txt", true);
+xhttp.send();-->
+
+<!--GET or POST?
+GET is simpler and faster than POST, and can be used in most cases.
+
+However, always use POST requests when:
+
+1.A cached file is not an option (update a file or database on the server).
+2.Sending a large amount of data to the server (POST has no size limitations).
+3.Sending user input (which can contain unknown characters), POST is more robust and secure than GET.-->
+
+
+
+<!--Synchronous XMLHttpRequest (async = false) is not recommended because the JavaScript will stop executing until the server response is ready. 
+If the server is busy or slow, the application will hang or stop.-->
