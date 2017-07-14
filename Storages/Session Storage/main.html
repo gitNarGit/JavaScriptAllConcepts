@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<!--sessionStorage is the same as localStorage, but it's data is deleted after closing tab-->
+<!--arrays and objects is best to store with JSON.stringify
+this allows us to easily convert back to array or object with JSON.parse-->
+<script>
+sessionStorage.setItem("data",JSON.stringify({a : 1,b : 2,c : 3}));
+console.log(JSON.parse(sessionStorage.data));
+</script>
+
+<!--Example-->
+
+<html>
+<head>
+<script>
+function clickCounter() {
+    if(typeof(Storage) !== "undefined") {
+        if (sessionStorage.clickcount) {
+            sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+        } else {
+            sessionStorage.clickcount = 1;
+        }
+        document.getElementById("result").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session.";
+    } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+</script>
+</head>
+<body>
+<p><button onclick="clickCounter()" type="button">Click me!</button></p>
+<div id="result"></div>
+<p>Click the button to see the counter increase.</p>
+<p>Close the browser tab (or window), and try again, and the counter is reset.</p>
+</body>
+</html>
