@@ -1,0 +1,38 @@
+ <!DOCTYPE HTML>
+
+<!--event.target-->
+
+<!--A handler on a parent element can always get the details about where it actually happened.-->
+<!--The most deeply nested element that caused the event is called a target element, accessible as event.target.-->
+
+<!--Note the differences from this (=event.currentTarget):
+
+ * event.target – is the “target” element that initiated the event, it doesn’t change through the bubbling process.
+ * this – is the “current” element, the one that has a currently running handler on it.-->
+
+<!--For instance, if we have a single handler form.onclick, then it can “catch” all clicks inside the form. No matter where the click happened, it bubbles up to <form> and runs the handler.
+
+In form.onclick handler:
+
+ * this (=event.currentTarget) is the <form> element, because the handler runs on it.
+ * event.target is the concrete element inside the form that actually was clicked.-->
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="example.css">
+</head>
+
+<body>
+  A click shows both <code>event.target</code> and <code>this</code> to compare:
+
+  <form id="form">FORM
+    <div>DIV
+      <p>P</p>
+    </div>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
