@@ -1,7 +1,4 @@
-// fulfilled - The action relating to the promise succeeded
-// rejected - The action relating to the promise failed
-// pending - Hasn't fulfilled or rejected yet - this status can't be resolved. It's a default status
-// settled - Has fulfilled or rejected - fulfilled will be in then, rejected in error function
+// Example 1
 
 let promise = new Promise(function(resolve, reject) {
   resolve(1); // fulfilled state, used with then
@@ -16,3 +13,17 @@ promise.then(function(val) {
 },function(error){
   console.log(error);
 })
+
+
+// Example 2
+
+let promise = new Promise(function(resolve, reject) {
+  let x = 5;
+  setTimeout(function(){
+    x = 10;
+    resolve(x);
+  },2000);
+});
+promise.then(function(result) {
+  console.log(result); // 10
+});
